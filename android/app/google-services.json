@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330195678843",
+    "project_id": "gamebe-1731a",
+    "storage_bucket": "gamebe-1731a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330195678843:android:d49ee3193d8efc9bad54de",
+        "android_client_info": {
+          "package_name": "com.example.gamebe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330195678843-sp8iipaumq6lbhe6s6jmtt8u019sggpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYJl9Nj1M4HN_4aoGGkC8kcVi19O05wfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330195678843-sp8iipaumq6lbhe6s6jmtt8u019sggpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
