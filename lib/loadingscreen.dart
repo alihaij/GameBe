@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:gamebe/login_page_screen.dart';
-import 'login_page_screen.dart';
+import 'package:gamebe/Screen/login_page_screen.dart';
+import 'Screen/login_page_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({Key? key}) : super(key: key);
@@ -35,17 +35,21 @@ class _LoadingScreenState extends State<LoadingScreen> {
               children: const [
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Image(image: AssetImage('images/icon1.png')),
+                  child: Hero(
+                      tag: 'icon',
+                      child: Image(image: AssetImage('images/icon1.png'))),
                 )
               ],
             ),
             const SizedBox(
               height: 5,
             ),
-            const Text(
+            Text(
               'TO B OR NOT TO B',
               style: TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 30),
+                  color: Colors.redAccent.shade700,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
             )
           ],
         ),

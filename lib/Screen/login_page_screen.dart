@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gamebe/homepage.dart';
+import 'package:gamebe/Screen/homepage.dart';
 import 'homepage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,8 +18,11 @@ class _LoginPageState extends State<LoginPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Image(
-            image: AssetImage('images/icon1.png'),
+          const Hero(
+            tag: 'icon',
+            child: Image(
+              image: AssetImage('images/icon1.png'),
+            ),
           ),
           const SizedBox(
             height: 20,
