@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gamebe/homepage.dart';
-import 'homepage.dart';
+import 'package:gamebe/Screen/main_screen.dart';
+import 'main_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -18,17 +18,22 @@ class _LoginPageState extends State<LoginPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Image(
-            image: AssetImage('images/icon1.png'),
+          const Hero(
+            tag: 'logo',
+            child: Image(
+              image: AssetImage('images/icon1.png'),
+              width: 100,
+              height: 100,
+            ),
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           const Text(
             'SIGN IN',
             style: TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.w800,
+              fontSize: 35,
+              fontFamily: 'AlfaSlabOne',
               color: Colors.red,
             ),
           ),
@@ -46,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
+              obscureText: true,
               decoration: InputDecoration(
                 fillColor: Colors.white30,
                 filled: true,

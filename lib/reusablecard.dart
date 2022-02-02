@@ -22,8 +22,11 @@ import 'unogame.dart';
 //   }
 // }
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({Key? key, required this.color, required this.image})
-      : super(key: key);
+  const ReusableCard({
+    Key? key,
+    required this.color,
+    required this.image,
+  }) : super(key: key);
 
   final Color color;
   final String image;
