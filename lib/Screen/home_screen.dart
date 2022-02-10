@@ -9,11 +9,12 @@ import 'news_screen.dart';
 import 'settings_screen.dart';
 import 'games_screen.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  static const String id = 'home_screen';
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
 final screens = [
@@ -26,7 +27,7 @@ final screens = [
 final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 final navigationKey = GlobalKey<CurvedNavigationBarState>();
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   int index = 2;
   @override
   Widget build(BuildContext context) {

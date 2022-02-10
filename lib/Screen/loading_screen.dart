@@ -4,6 +4,7 @@ import 'package:gamebe/Screen/login_page_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoadingScreen extends StatefulWidget {
+  static const String id = 'loading_screen';
   const LoadingScreen({Key? key}) : super(key: key);
 
   @override
