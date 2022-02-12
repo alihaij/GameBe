@@ -10,9 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 FirebaseAuth auth = FirebaseAuth.instance;
-var currentUser = FirebaseAuth.instance.currentUser;
 CollectionReference users = FirebaseFirestore.instance.collection('users');
-User? user = FirebaseAuth.instance.currentUser;
 
 class LoginPage extends StatelessWidget {
   static const String id = 'login_screen';
@@ -30,10 +28,8 @@ class LoginPage extends StatelessWidget {
           password: data.password.toString(),
         );
       } on FirebaseAuthException catch (e) {
-        if (e.code == 'user-not-found') {
-          return ('No user found for that email.');
-        } else if (e.code == 'wrong-password') {
-          return ('Wrong password provided for that user.');
+        if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+          return ('Email or password not correct.');
         }
       }
       return null;
@@ -43,8 +39,7 @@ class LoginPage extends StatelessWidget {
   Future<String?> _signupUser(SignupData data) {
     return Future.delayed(loginTime).then((_) async {
       try {
-        UserCredential userCredential =
-            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        auth.createUserWithEmailAndPassword(
           email: data.name.toString(),
           password: data.password.toString(),
         );
@@ -75,7 +70,7 @@ class LoginPage extends StatelessWidget {
     return FlutterLogin(
       theme: LoginTheme(
           primaryColor: const Color(0xFF272033),
-          accentColor: Color(0xFF272033),
+          accentColor: const Color(0xFF272033),
           titleStyle: const TextStyle(
             fontFamily: 'Quicksand',
             letterSpacing: 4,
@@ -83,7 +78,7 @@ class LoginPage extends StatelessWidget {
       initialAuthMode: AuthMode.login,
       logo: const AssetImage('images/icon1.png'),
       navigateBackAfterRecovery: true,
-      loginAfterSignUp: false,
+      loginAfterSignUp: true,
       loginProviders: [
         LoginProvider(
           button: Buttons.GoogleDark,
@@ -127,44 +122,18 @@ class LoginPage extends StatelessWidget {
         UserFormField(
           keyName: 'Username',
           fieldValidator: (value) {
-            if (value == 'omk') {
+            if (value == 'omk' || value == 'loloucho' || value == 'ali') {
               return 'Username already exists';
+            } else {
+              FirebaseFirestore.instance
+                  .collection('users')
+                  .add({'user_name': value});
             }
-            if (value == 'loloucho') {
-              return 'Username already exists';
-            }
-            if (value == 'ali') {
-              return 'Username already exists';
-            }
-            FirebaseFirestore.instance
-                .collection('users')
-                .add({'user_name': value});
-            return null;
           },
         )
       ],
       // initialAuthMode: AuthMode.login,
-      userValidator: (value) {
-        if (!value!.contains('@')) {
-          return "Email must contain '@' ";
-        }
-
-        return null;
-      },
-      passwordValidator: (value) {
-        if (value!.isEmpty) {
-          return 'Password is empty';
-        }
-        if (value.length < 7) {
-          return 'Passwords should have a minimum of 7 characters';
-        }
-        return null;
-      },
-      onLogin: (loginData) {
-        debugPrint('Login info');
-        debugPrint('Name: ${loginData.name}');
-        debugPrint('Password: ${loginData.password}');
-
+      onLogin: (loginData) async {
         return _loginUser(loginData);
       },
       onSignup: (signupData) {
