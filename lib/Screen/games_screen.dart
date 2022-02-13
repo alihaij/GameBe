@@ -42,11 +42,14 @@ class GamesScreen extends StatelessWidget {
                     crossAxisCount: 2),
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    return Container(
-                      margin: EdgeInsets.all(1),
-                      height: 50,
-                      alignment: Alignment.center,
-                      color: Colors.deepPurple[100 * (index % 9)],
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        margin: EdgeInsets.all(1),
+                        height: 50,
+                        alignment: Alignment.center,
+                        color: Colors.deepPurple[100 * (index % 9)],
+                      ),
                     );
                   },
                   childCount: 15,

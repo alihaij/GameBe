@@ -34,7 +34,6 @@ class SettingsScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        maintainState: false,
                         builder: (context) => const LoadingScreen(),
                       ),
                     );

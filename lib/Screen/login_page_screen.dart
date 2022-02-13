@@ -8,9 +8,16 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:gamebe/custom_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 FirebaseAuth auth = FirebaseAuth.instance;
 CollectionReference users = FirebaseFirestore.instance.collection('users');
+GoogleSignIn _googleSignIn = GoogleSignIn(
+  scopes: [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ],
+);
 
 class LoginPage extends StatelessWidget {
   static const String id = 'login_screen';
@@ -34,6 +41,14 @@ class LoginPage extends StatelessWidget {
       }
       return null;
     });
+  }
+
+  Future<void> _handleSignIn() async {
+    try {
+      await _googleSignIn.signIn();
+    } catch (error) {
+      print(error);
+    }
   }
 
   Future<String?> _signupUser(SignupData data) {
@@ -84,7 +99,7 @@ class LoginPage extends StatelessWidget {
           button: Buttons.GoogleDark,
           label: 'Sign in with Google',
           callback: () async {
-            return null;
+            _handleSignIn();
           },
           providerNeedsSignUpCallback: () {
             // put here your logic to conditionally show the additional fields
