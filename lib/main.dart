@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gamebe/games/chess_game.dart';
 import 'Screen/loading_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF272033),
       ),
       home: const LoadingScreen(),
+      routes: {
+        ChessGame.id: (context) => const ChessGame(),
+      },
     );
   }
 }

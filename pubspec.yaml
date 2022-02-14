@@ -35,6 +35,8 @@ dev_dependencies:
   #sign_in
   google_sign_in: ^5.2.3
 
+  #games
+  flutter_chess_board: ^1.0.1
 
   flutter_test:
 

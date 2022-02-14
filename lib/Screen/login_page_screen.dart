@@ -180,9 +180,9 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-const mockUsers = {
-  'a3haij@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-  'near.huscarl@gmail.com': 'subscribe to pewdiepie',
-  '@.com': '.',
-};
+// const mockUsers = {
+//   'a3haij@gmail.com': '12345',
+//   'hunter@gmail.com': 'hunter',
+//   'near.huscarl@gmail.com': 'subscribe to pewdiepie',
+//   '@.com': '.',
+// };
