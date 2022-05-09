@@ -19,24 +19,25 @@ dependencies:
 
 dev_dependencies:
   #design
-  introduction_screen: ^2.1.0
+  introduction_screen: ^3.0.1
   animated_text_kit: ^4.2.1
   animated_bottom_navigation_bar: ^0.3.2
-  curved_navigation_bar: ^1.0.2
-  flutter_login: ^3.1.0
+  curved_navigation_bar: ^1.0.3
+  flutter_login: ^3.2.0
   flutter_signin_button: ^2.0.0
 
   #firebase_links:
-  cloud_firestore: ^3.1.6
-  firebase_core: ^1.11.0
-  firebase_auth: ^3.3.6
+  cloud_firestore: ^3.1.14
+  firebase_core: ^1.16.0
+  firebase_auth: ^3.3.17
   flutter_settings_screens: ^0.3.2-null-safety
 
   #sign_in
-  google_sign_in: ^5.2.3
+  google_sign_in: ^5.3.0
 
   #games
   flutter_chess_board: ^1.0.1
+
 
   flutter_test:
 

@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../reusablecard.dart';
-import '../unogame.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'profile_screen.dart';
-import 'friends_screen.dart';
 import 'news_screen.dart';
 import 'settings_screen.dart';
 import 'games_screen.dart';
+import 'chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -18,10 +16,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 final screens = [
-  const SettingsScreen(),
+  const SettingsScreenPage(),
   const NewsScreen(),
   const GamesScreen(),
-  const FriendsScreen(),
+  const ChatScreen(),
   const ProfileScreen()
 ];
 final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();

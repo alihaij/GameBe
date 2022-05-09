@@ -65,7 +65,7 @@ class GamesScreen extends StatelessWidget {
                         child: Container(
                           decoration: const BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage('images/chess2.jpg')),
+                                image: AssetImage('images/chess4.jpg')),
                           ),
                           margin: const EdgeInsets.all(1),
                           height: 50,

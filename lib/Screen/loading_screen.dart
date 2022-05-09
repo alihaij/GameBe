@@ -51,7 +51,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 ),
                 Center(
                   child: Text(
-                    'TO BE OR NOT TO BE',
+                    'OR NOT TO BE',
                     style: TextStyle(
                         fontFamily: 'AlfaSlabOne',
                         fontSize: 30,
